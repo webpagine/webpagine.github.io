@@ -1,0 +1,33 @@
+@import "components.css";
+@import "footer.css";
+@import "header.css";
+
+body {
+    font-family: "Noto Sans", serif;
+    margin: 0;
+}
+
+footer {
+    color: white;
+    background-color: black;
+}
+
+header {
+    margin: 0;
+}
+
+.invert {
+    filter: invert(1);
+}
+
+.content {
+    a {
+        text-decoration: none;
+        transition-duration: 500ms;
+    }
+
+    a:hover {
+        color: deepskyblue;
+        transition-duration: 500ms;
+    }
+}

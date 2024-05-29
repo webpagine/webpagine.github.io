@@ -1,0 +1,40 @@
+[copyright]
+owner = "Symboltics"
+date = "2024"
+license = "Text is available under the Creative Commons Attribution-ShareAlike License 4.0; additional terms may apply."
+
+[logo]
+src = "/assets/img/symboltics_white.svg"
+height = 40
+
+[[lists]]
+title = "About Symboltics"
+links = [
+    { name = "Vision", link = "" },
+    { name = "Mission", link = "" },
+    { name = "Where we go", link = "" },
+    { name = "Where we come", link = "" },
+]
+
+[[lists]]
+title = "Infrastructure"
+links = [
+    { name = "LangVM", link = "https://github.com/langvm/" },
+    { name = "Symonarch", link = "https://github.com/symonarch/" },
+    { name = "HyperArchy", link = "https://github.com/hyperarchy/" },
+    { name = "Web Pagine", link = "https://github.com/webpagine/" },
+]
+
+[[lists]]
+title = "Services"
+links = [
+    { name = "Modularis", link = "https://github.com/symboltics/modularis/" },
+]
+
+[[media.list]]
+logo = "github"
+link = "https://github.com/jellyterra"
+
+[[media.list]]
+logo = "x"
+link = "https://x.com/jellyterra"

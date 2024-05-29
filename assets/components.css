@@ -1,0 +1,22 @@
+a.button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border-radius: 30px;
+
+    font-family: "Droid Sans", serif;
+    font-weight: bolder;
+
+    color: white;
+
+    transition-duration: 200ms;
+
+    background-color: #ff336a;
+
+    text-decoration: none;
+}
+
+.button:hover {
+    transition-duration: 200ms;
+
+    background-color: #f58;
+}

@@ -1,0 +1,35 @@
+.nav-bar {
+    padding: 0 100px;
+
+    user-select: none;
+
+    a {
+        color: black;
+        text-decoration: none;
+    }
+}
+
+.nav-logo {
+    margin-top: 30px;
+    display: block;
+}
+
+.nav-item-link {
+    margin: 30px;
+    padding: 10px 20px;
+    border-radius: 30px;
+
+    display: inline-block;
+
+    transition-duration: 200ms;
+
+    font-family: "Droid Sans", serif;
+    font-weight: bolder;
+}
+
+.nav-item-link:hover {
+    transition-duration: 200ms;
+
+    color: white;
+    background-color: #ff006a;
+}

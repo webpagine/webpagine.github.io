@@ -1,0 +1,61 @@
+{{ with .data }}
+<footer>
+<div class="footer">
+<div class="footer-row">
+
+{{ range .lists }}
+<div class="footer-link-list-block">
+<div class="footer-link-list-title">{{ .title }}</div>
+<div class="footer-link-list">
+
+{{ range .links }}
+<a target="_blank" href="{{ .link }}">{{ .name }}</a>
+{{ end }}
+
+</div>
+</div>
+{{ end }}
+
+<div class="footer-link-list-block" style="margin-left: auto">
+<div class="footer-icon-list">
+{{ range .media.list }}
+<a class="footer-icon" target="_blank" href="{{ .link }}">
+<img src="https://simpleicons.org/icons/{{ .logo }}.svg" alt="{{ .logo }}"/>
+</a>
+{{ end }}
+</div>
+
+</div>
+</div>
+
+<hr class="footer-hr"/>
+
+<div class="footer-row">
+<div class="footer-link-list-block">
+<img src="{{ .logo.src }}" width="{{ .logo.width }}" height="{{ .logo.height }}" alt="logo"/>
+</div>
+<div class="footer-link-list-block" style="margin-left: 100px; color: gray; max-width: 70%">
+{{ .description }}
+</div>
+</div>
+
+<div class="footer-row">
+<div class="footer-link-list-block">
+{{ with .copyright }}
+<span>&copy; Copyright {{ .date }}</span>
+<span>{{ .owner }}</span>
+<span style="color: gray">{{ .license }}</span>
+{{ end }}
+</div>
+
+<div style="color: gray; margin-left: auto">
+Proudly built with
+<a target="_blank" href="https://github.com/webpagine/">
+<img style="vertical-align: text-top" src="/assets/img/pagine.svg" alt="pagine"/>
+</a>
+</div>
+
+</div>
+</div>
+</footer>
+{{ end }}

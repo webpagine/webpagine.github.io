@@ -1,0 +1,14 @@
+[templates]
+header = "/templates/header.gohtml"
+footer = "/templates/footer.gohtml"
+head = "/templates/head.gohtml"
+main = "/templates/mainpage.gohtml"
+
+[include]
+header = [ "/data/header.toml" ]
+footer = [ "/data/footer.toml" ]
+head = [ "/data/head.toml" ]
+
+[define.main]
+lang = "en"
+title = "Pagine - Web Generator"
