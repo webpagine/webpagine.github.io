@@ -1,0 +1,3 @@
+[submodule "templates/genesis"]
+	path = templates/genesis
+	url = https://github.com/webpagine/genesis

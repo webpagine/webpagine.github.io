@@ -1,13 +1,32 @@
-[copyright]
+[genesis.head]
+icon = "https://avatars.githubusercontent.com/u/168826426"
+
+[genesis.header.nav.logo]
+src = "/assets/img/pagine.svg"
+height = 50
+
+# Header
+
+[[genesis.header.nav.items]]
+name = "Documentation"
+link = "/docs/"
+
+[[genesis.header.nav.items]]
+name = "Repositories"
+link = "https://github.com/webpagine"
+
+# Footer
+
+[genesis.footer.logo]
+src = "/assets/img/symboltics_white.svg"
+height = 40
+
+[genesis.footer.copyright]
 owner = "Symboltics"
 date = "2024"
 license = "Text is available under the Creative Commons Attribution-ShareAlike License 4.0; additional terms may apply."
 
-[logo]
-src = "/assets/img/symboltics_white.svg"
-height = 40
-
-[[lists]]
+[[genesis.footer.lists]]
 title = "About Symboltics"
 links = [
     { name = "Vision", link = "" },
@@ -16,7 +35,7 @@ links = [
     { name = "Where we come", link = "" },
 ]
 
-[[lists]]
+[[genesis.footer.lists]]
 title = "Infrastructure"
 links = [
     { name = "LangVM", link = "https://github.com/langvm/" },
@@ -25,16 +44,17 @@ links = [
     { name = "Web Pagine", link = "https://github.com/webpagine/" },
 ]
 
-[[lists]]
+[[genesis.footer.lists]]
 title = "Services"
 links = [
     { name = "Modularis", link = "https://github.com/symboltics/modularis/" },
 ]
 
-[[media.list]]
-logo = "github"
+[[genesis.footer.media.list]]
+icon = "github"
 link = "https://github.com/jellyterra"
 
-[[media.list]]
-logo = "x"
+[[genesis.footer.media.list]]
+icon = "x"
 link = "https://x.com/jellyterra"
+

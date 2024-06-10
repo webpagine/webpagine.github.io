@@ -1,0 +1,11 @@
+[genesis.header.nav.logo]
+src = "/assets/img/pagine.svg"
+height = 50
+
+[[genesis.header.nav.items]]
+name = "Documentation"
+link = "/docs/"
+
+[[genesis.header.nav.items]]
+name = "Repositories"
+link = "https://github.com/webpagine"

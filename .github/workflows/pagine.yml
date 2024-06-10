@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install Pagine
-        run: go install github.com/webpagine/go-pagine/cmd/pagine@latest
+        run: go install github.com/webpagine/pagine/cmd/pagine@latest
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -45,7 +45,7 @@ jobs:
         uses: actions/configure-pages@v4
 
       - name: Build with Pagine
-        run: ~/go/bin/pagine --gen --public ./public/
+        run: ~/go/bin/pagine --public ./public/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

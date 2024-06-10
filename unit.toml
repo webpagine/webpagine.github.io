@@ -1,0 +1,9 @@
+[[unit]]
+template = "genesis:page"
+output = "/index.html"
+define = { title = "Pagine - Web Generator", content = "/mainpage.html" }
+
+[[unit]]
+template = "genesis:page"
+output = "/404.html"
+define = { title = "Pagine - Web Generator", content = "/404.html" }
