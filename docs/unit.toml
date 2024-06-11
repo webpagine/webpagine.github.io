@@ -1,0 +1,4 @@
+[[unit]]
+template = "genesis:post"
+output = "/index.html"
+define = { title = "Documentation", content = "../README.md" }

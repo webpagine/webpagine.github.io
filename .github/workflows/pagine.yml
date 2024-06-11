@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install Pagine
-        run: go install github.com/webpagine/pagine/cmd/pagine@latest
+        run: go install github.com/webpagine/pagine/v2/cmd/pagine@latest
 
       - name: Checkout
         uses: actions/checkout@v4
