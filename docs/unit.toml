@@ -1,4 +1,4 @@
 [[unit]]
-template = "genesis:post"
+template = "genesis:doc"
 output = "/index.html"
-define = { title = "Documentation", content = "../README.md" }
+define = { title = "Documentation", post = "/README.md" }

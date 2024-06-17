@@ -1,8 +1,71 @@
-<div style="min-height: 100%; text-align: center">
-	<div style="margin: auto; block-size: 30%; max-width:100px; background-color: #ff006a"></div>
-	<img src="/assets/img/pagine_logo.svg" width="100" alt="logo"/>
-	<p style="font-size: 200%">Quickly build web content with frames from templates.<br/>Just in milliseconds.</p>
-	<div><a class="button" target="_blank" href="https://github.com/webpagine/get-started/">GET STARTED WITH PAGINE</a></div>
-	<div style="block-size: 10%"></div>
-	<a target="_blank" href="https://github.com/webpagine/go-pagine/"><img alt="GitHub Repo stars" height="30" src="https://img.shields.io/github/stars/webpagine/go-pagine"></a>
+<div style="text-align: center">
+
+<div style="min-height: 100%">
+<div style="block-size: 15%"></div>
+
+<img src="/assets/img/pagine_icon.svg" width="200" alt="logo"/>
+<p style="font-size: 200%">Quickly build web content with frames from templates.<br/>Just in milliseconds.</p>
+
+<div>
+<a class="button button-filled" target="_blank" href="https://github.com/webpagine/get-started">GET STARTED WITH PAGINE</a>
+<a class="button" target="_blank" href="https://github.com/webpagine/pagine">VIEW SOURCE CODE</a>
+</div>
+
+<div style="block-size: 10%"></div>
+<a target="_blank" href="https://github.com/webpagine/pagine/stargazers"><img alt="GitHub Repo stars" height="30" src="https://img.shields.io/github/stars/webpagine/pagine"></a>
+</div>
+
+{{ define "flip" }}
+{{ if . }} class="section-filled" style="text-align: left" {{ else }} style="text-align: right" {{ end }}
+{{ end }}
+
+{{ $flip := false }}
+
+{{ $flip = not $flip }}
+<section {{ template "flip" $flip }}>
+<h1>Everything, speed up!</h1>
+<p>
+Make max of performance. Execute units and generate related pages in parallel.<br/>
+Flexibility without compromising efficiency. Do its job well.
+</p>
+</section>
+
+{{ $flip = not $flip }}
+<section {{ template "flip" $flip }}>
+<h1>Creativity, inspired.</h1>
+Stylesheets, SVGs, interaction scripts... Make your own template,<br/>
+distribute and reuse template files via Git, with assets attached.<br/>
+Choose a license and publish your template, just in minutes!
+</section>
+
+{{ $flip = not $flip }}
+<section {{ template "flip" $flip }}>
+<h1>Internationalization, united!</h1>
+Write and translate your knowledge and experiences, share with the people around the world.<br/>
+Commit translation for articles you think is valuable, break the boundary of knowledge!
+</section>
+
+{{ $flip = not $flip }}
+<section {{ template "flip" $flip }}>
+<h1>Deployment, unattended.</h1>
+Well integrated with CD/CD services. You have never to worry about what to do after you wrote.<br/>
+Automatically update the page in server mode, see changes in real time.<br/>
+When you think everything is ready, deploy via CI/CD directly!<br/>
+For GitHub Pages, just an Actions workflow!
+</section>
+
+{{ $flip = not $flip }}
+<section {{ template "flip" $flip }}>
+<h1>Build what you want.</h1>
+Documentation, blog, wiki, encyclopedia ... Find your template, and start with it.<br/>
+Content, appearance and metadata are separated, which keeps the directories clear.
+</section>
+
+<section>
+<h1>Leave footprints on your journey.</h1>
+<div style="min-height: 5%"></div>
+<a class="button button-filled" target="_blank" href="https://github.com/webpagine/get-started">GET STARTED WITH PAGINE</a>
+<div style="min-height: 10%"></div>
+</section>
+
 </div>
