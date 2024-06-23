@@ -1,0 +1,15 @@
+[genesis]
+lang = "zh"
+locale = "zh-CN"
+
+[genesis.header.nav.logo]
+src = "/assets/img/pagine.svg"
+height = 50
+
+[[genesis.header.nav.items]]
+title = "文档"
+link = "/docs/"
+
+[[genesis.header.nav.items]]
+title = "代码库"
+link = "https://github.com/webpagine"

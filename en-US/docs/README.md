@@ -228,7 +228,7 @@ Upload `public` to your server.
 
 GitHub Actions workflow configuration can be found in [Get Started](https://github.com/webpagine/get-started) repository.
 
-# FAQ
+## FAQ
 
 ### Why another generator? Isn't Hugo enough?
 

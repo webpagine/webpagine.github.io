@@ -1,7 +1,7 @@
 [[unit]]
-template = "genesis:page"
+template = "genesis:locale"
 output = "/index.html"
-define = { title = "Pagine - Web Generator", content = "/mainpage.html" }
+define = { title = "Pagine - Web Generator" }
 
 [[unit]]
 template = "genesis:page"
