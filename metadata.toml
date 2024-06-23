@@ -42,10 +42,10 @@ license = "Text is available under the <a target=\"_blank\" href=\"https://creat
 [[genesis.footer.lists]]
 title = "About Symboltics"
 links = [
-    { name = "Vision", link = "" },
-    { name = "Mission", link = "" },
-    { name = "Where we go", link = "" },
-    { name = "Where we come", link = "" },
+    { name = "Vision", link = "https://symboltics.com" },
+    { name = "Mission", link = "https://symboltics.com" },
+    { name = "Where we go", link = "https://symboltics.com" },
+    { name = "Where we come", link = "https://symboltics.com" },
 ]
 
 [[genesis.footer.lists]]
