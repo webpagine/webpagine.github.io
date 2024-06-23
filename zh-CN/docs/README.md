@@ -1,36 +1,38 @@
 # Pagine v2
 
-Pagine is an high-performance website constructor that makes full use of multicore hardware.
+Pagine 是一个充分利用多核设施条件的高性能网站内容构建器，
+页面构建任务可以在很短时间内完成。
 
-Build jobs can be completed very fast.
+## 特性
 
-## Features
+- 并行层次化处理和单元任务执行，从头到尾都如此
+- 层次化元数据传播使元数据管理简化
+- 借助 Git 管理模板和素材，所有模板都可以被分发使用而无需改动
+- 模板内建函数
+- 在模板中与引擎交互
+- 以 HTTP 服务器运行时，在文件发生变动时更新内容
 
-- Parallel hierarchy processing and unit execution. Everything is executed in parallel from beginning to end.
-- Hierarchical metadata propagation which makes metadata management easy.
-- Manage templates and assets via Git. Every template can be distributed and used without modification.
-- In-template builtin functions
-- Interact with Pagine in templates.
-- Update on file change while running as HTTP server.
+已支持的富文本格式:
 
-Supported rich text formats:
-
-- [Markdown](https://markdownguide.org) with [MathJax](https://www.mathjax.org) support
+- [Markdown](https://markdownguide.org) 并带有 [MathJax](https://www.mathjax.org) 支持
 - [Asciidoc](https://asciidoc.org)
 
-## Install
+## 安装
 
-### Binaries
+### 已构建的二进制档
 
-Find the executable that matches your OS and architecture in [releases](https://github.com/webpagine/pagine/v2/releases).
+在 [releases](https://github.com/webpagine/pagine/v2/releases) 中选择匹配你操作系统和处理器架构的二进制档。
 
-### Build from source
+### 从源码构建
 
 ```shell
 $ go install github.com/webpagine/pagine/v2/cmd/pagine@latest
 ```
 
-## Usage
+> [!TIP]
+> 在非 amd64 平台上建议借助 Go mod 安装 Pagine。 [在此](https://go.dev/dl)选择适用你平台的 Go 工具链。
+
+## CLI 用法
 
 Usage of pagine:
 - `-public` string
@@ -41,7 +43,7 @@ Usage of pagine:
   - Specify the port to listen and serve as HTTP.
 
 
-### Generate
+### 生成
 
 ```shell
 $ cd ~/web/my_site
@@ -49,28 +51,31 @@ $ pagine
 Generation complete.
 ```
 
-### Run as HTTP server
+### 以 HTTP 服务器运行
 
 ```shell
 $ cd ~/web/my_site
 $ pagine --serve :12450
 ```
 
-It automatically executes generation when file changes are detected by `inotify`.
+文件变动被 `inotify` 捕获后，Pagine 会自动执行生成。
 
 > [!NOTE]
-> Incremental generation is not implemented yet.<br/>
-> Set the `--public` under `/tmp` is recommended to reduce hard disk writes.
+> 增量生成尚未实现。<br/>
+> 建议将 `--public` 设在 `/tmp` 下以减少硬盘写入。
 
-Since v2.1.0, the server provides a WebSocket interface at `/ws` to provide event monitoring for the client, such as page updates.
+自版本 v2.1.0，服务器提供一个 WebSocket 位于 `/ws` 的接口以提供事件监听，例如页面更新。
 
-## Structure
+> [!CAUTION]
+> 在公共网络暴露你的 Pagine 服务器可能是有风险的，你应该将生成的页面结果部署到静态页面服务。
 
-### Template
+## 构成
 
-Template is a set of page frames (Go template file) and assets (e.g. SVGs, stylesheets and scripts).
+### 模板
 
-Manifest of one template looks like:
+模板是一组页面框架（Go 模板文件）和素材（比如 SVG，样式表和脚本）。
+
+一个木板的自述文件看起来应该像:
 ```toml
 [manifest]
 canonical = "com.symboltics.pagine.genesis" # Canonical name
@@ -85,9 +90,9 @@ name   = "post"      # Export as name `post`
 export = "post.html" # Export `post.html`
 ```
 
-To the Go templates files syntax, see [text/template](https://pkg.go.dev/text/template).
+至于 Go 模板语法，见 [text/template](https://pkg.go.dev/text/template)。
 
-Example:  `page.html`
+样例:  `page.html`
 ```html
 <html lang="{{ .lang }}">
 <head>
@@ -102,9 +107,9 @@ Example:  `page.html`
 </html>
 ```
 
-### Env
+### 环境
 
-"Environment" is the configuration of the details of the entire process.
+环境是对任务全过程的细节配置。
 
 ```toml
 ignore = [ "/.git*" ] # Pattern matching. Matched files will not be **copied** to the public/destination.
@@ -114,23 +119,23 @@ genesis = "/templates/genesis"
 another = "/templates/something_else" # Load and set alias for the template.
 ```
 
-Installing templates via Git submodule is recommended. Such as:
+建议通过 Git submodule 安装现有模板，例如：
 
 ```shell
 $ git submodule add https://github.com/webpagine/genesis templates/genesis
 ```
 
-### Level
+### 层级
 
-Each "level" contains its metadata. And a set of units to be executed.
+每一“层”拥有元数据和一组将要执行的单元任务。
 
-For directories, metadata sets are stored in `metadata.toml` in the form of map, and units are stored in `unit.toml`
+对于目录，元数据被以表的形式储存在 `metadata.toml`，单元任务则被储存在 `unit.toml`。
 
-Each template has its alias that defined in `env` as the namespace.
+每一个模板都有其在“环境”中定义的别名作为命名空间。
 
-Levels can override fields propagated from parents.
+层级可以覆盖父层级传播的元数据。
 
-Example: `/metadata.toml`
+样例: `/metadata.toml`
 ```toml
 [genesis]
 title = "Pagine"
@@ -143,9 +148,9 @@ name = "Documentation"
 link = "/docs/"
 ```
 
-### Unit
+### 单元
 
-Example: `/unit.toml`
+样例: `/unit.toml`
 ```toml
 [[unit]]
 template = "genesis:page"       # Which template to use.
@@ -158,9 +163,9 @@ output   = "/404.html"
 define   = { title = "Page not found" }
 ```
 
-## Builtin functions
+## 内建函数
 
-### Arithmetic
+### 算术
 
 | Func  | Args      | Result |
 |-------|-----------|--------|
@@ -168,102 +173,111 @@ define   = { title = "Page not found" }
 | `sub` | a, b: Int | Int    |
 | `mul` | a, b: Int | Int    |
 | `div` | a, b: Int | Int    |
-| `mod` | a,b : Int | Int    |
+| `mod` | a, b: Int | Int    |
 
-### Engine API
+### 引擎 API
 
-| Func      | Args                   | Description                                                                                      |
-|-----------|------------------------|--------------------------------------------------------------------------------------------------|
-| `getAttr` | key: String            | Get meta information in the form of map about units, hierarchy and templates provided by engine. |
+| Func      | Description       |
+|-----------|-------------------|
+| `getEnv`  | 获取环境信息，调试目的。      |
+| `getAttr` | 获取有关单元、层次和模板的元信息。 |
 
-| Attribution    | Description                                     |
-|----------------|-------------------------------------------------|
-| `unitBase`     | Unit's level's base dir path.                   |
-| `templateBase` | It tells the template where it has been stored. | 
+| Environment | Description                |
+|-------------|----------------------------|
+| `isServing` | 在 Pagine 以服务器运行时返回 `true`。 |
 
-| Func          | Description                                           |
-|---------------|-------------------------------------------------------|
-| `getMetadata` | It returns the root node of metadata of the template. |
+| Attribution    | Description  |
+|----------------|--------------|
+| `unitBase`     | 单元所在层级的目录路径。 |
+| `templateBase` | 记录着模板被放在哪里了。 |
 
-### Data processing
+| Func          | Description  |
+|---------------|--------------|
+| `getMetadata` | 返回模板元数据的根节点。 |
+
+> [!TIP]
+> `(getEnv).isServing` 可以被用来启用一些模板中的调试代码，例如页面实时更新。
+
+### 数据处理
 
 | Func         | Args                        | Result |
 |--------------|-----------------------------|--------|
 | `hasPrefix`  | str: String, prefix: String | Bool   |
 | `trimPrefix` | str: String, prefix: String | String |
 
-| Func             | Args                                            | Result                                           | Description                                                                       |
-|------------------|-------------------------------------------------|--------------------------------------------------|-----------------------------------------------------------------------------------|
-| `divideSliceByN` | slice: []Any, n: Int                            | [][]Any                                          | Divide a slice into *len(slice) / N* slices                                       |
-| `mapAsSlice`     | map: map[String]Any, **key**, **value**: String | []map[String]{ **key**: String, **value**: Any } | Convert map to a slice of map that contains two keys named **key** and **value**. |
+| Func             | Args                                            | Result                                           | Description                         |
+|------------------|-------------------------------------------------|--------------------------------------------------|-------------------------------------|
+| `divideSliceByN` | slice: []Any, n: Int                            | [][]Any                                          | 将切片分为 *len(slice) / N* 个切片。         |
+| `mapAsSlice`     | map: map[String]Any, **key**, **value**: String | []map[String]{ **key**: String, **value**: Any } | 将表分为以 **key** 为键名，**value** 为值名的切片。 |
 
-### Content
+### 内容
 
-Path starts from where the unit is.
+路径以单元所在路径为基。
 
-| Func             | Args                   | Description                             |
-|------------------|------------------------|-----------------------------------------|
-| `apply`          | path: String, data Any | Invoke a template.                      |
-| `embed`          | path: String           | Embed file raw content.                 |
-| `render`         | path: String           | Invoke renderer by file extension name. |
-| `renderAsciidoc` | path: String           | Render and embed Asciidoc content.      |
-| `renderMarkdown` | path: String           | Render and embed Markdown content.      |
+| Func             | Args                           | Description             |
+|------------------|--------------------------------|-------------------------|
+| `apply`          | path: String, data: Any        | 调用一个模板。                 |
+| `applyFromEnv`   | templateKey: String, data: Any | 调用一个在 `env.toml` 定义的模板。 |
+| `embed`          | path: String                   | 嵌入文件原始内容。               |
+| `render`         | path: String                   | 根据扩展名调用渲染器。             |
+| `renderAsciidoc` | path: String                   | 渲染并嵌入 Acsiidoc 内容。      |
+| `renderMarkdown` | path: String                   | 渲染并嵌入 Markdown 内容。      |
 
 | Format   | File Extension Name |
 |----------|---------------------|
 | Markdown | `md`                |
 | Asciidoc | `adoc`              |
 
-## Deploy
+## 部署
 
-### Manually
+### 手动
 
 ```shell
 $ pagine --public ../public
 ```
 
-Upload `public` to your server.
+上传 `public` 到你的服务器。
 
-### Deploy to GitHub Pages via GitHub Actions (recommended)
+### 通过 GitHub Actions 部署到 GitHub Pages（推荐）
 
-GitHub Actions workflow configuration can be found in [Get Started](https://github.com/webpagine/get-started) repository.
+GitHub Actions 工作流配置可以在 [Get Started](https://github.com/webpagine/get-started) 仓库找到。
 
-## FAQ
+## 问答
 
-### Why another generator? Isn't Hugo enough?
+### 为什么要搓另一个生成器？Hugo 不够用吗？
 
-Pagine is **not** Hugo, and is not aim to replace Hugo.
+Pagine **不是** Hugo，也不旨在替代 Hugo。
 
-Pagine does not embed page configurations in Markdown file, they are separated and should be separated.
+明显的一点是：Pagine 不会在内容中嵌入页面配置（元数据），他们被分开而且理应分开。
 
-And Pagine does not focus on Markdown only, I hope to support various kinds of source.
+Pagine 不止关注 Markdown，我希望能够支持多种来源。
 
-### Can I use Pagine for building complex web application?
+### 我是否能够用 Pagine 来构建复杂的 Web 应用？
 
-It can only help you get rid of repetitive work about static contents.
+它只能帮你摆脱关于静态内容的重复工作。
 
-Templates can increase productivity as long as Pagine well integrated with external tools.
+如果 Pagine 与外部工具集成得好，模板则还可以继续提高生产力。
 
-So, **it depends**.
+所以，**这要视情况而定**。
 
-### Co-operate with external tools such as npx?
+### 与外部工具互操作，比如 npx?
 
-It is possible. This step should be transparent to external tools.
+这是可能的，但这一步应该对外部工具透明。
 
-Run `npx` in *public* directory after the generation by Pagine.
+也许需要在 Pagine 完成生成后运行 `npx`。
 
-### What is the origin of the logo and name?
+### Logo 和命名的来源是?
 
-It is **neither** a browser engine, a layout engine **nor** a rendering engine.
+它**不是**浏览器引擎，**也不是**渲染引擎。
 
-Page Gen × Engine ⇒ Pagine. It has similar pronunciation to "pagen".
+Page Gen × Engine ⇒ Pagine. 与 "pagen" 发音相似。
 
-The logo is an opened book with a bookmark.
+Logo 是一个带书签的打开的书本。
 
-### Rewrite it in other PL?
+### 以其他编程语言重写?
 
-*I expected somebody would ask.*
+*我料到会有人这么说*
 
-It will not be taken unless it does bring obvious advantages.
+除非这样做有明显优势，这不会被采纳。
 
-Thus: NO. It is not planned currently.
+因此：不。目前不在计划内。
