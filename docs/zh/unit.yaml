@@ -1,0 +1,6 @@
+unit:
+  - template: "documentor"
+    template_key: "redirect"
+    output: "index.html"
+    define:
+      target: "v2.1"

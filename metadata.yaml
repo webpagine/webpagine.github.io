@@ -1,0 +1,86 @@
+genesis:
+  lang: "en"
+  locale: "en-US"
+  theme: "dark"
+
+  locales:
+    - locale: "en-US"
+      title: "English"
+
+    - locale: "zh-CN"
+      title: "简体中文"
+
+  head:
+    icon: "https://avatars.githubusercontent.com/u/168826426"
+
+  header:
+    logo:
+      src: "/assets/img/pagine.svg"
+      height: 50
+
+    nav:
+      - title: "Documentation"
+        link: "/docs/"
+
+      - title: "Repositories"
+        link: "https://github.com/webpagine"
+
+  footer:
+    logo:
+      src: "/assets/img/symboltics_mono.svg"
+      height: 40
+
+    copyright:
+      owner: "Symboltics"
+      date: "2024"
+      license: "Text is available under the <a target=\"_blank\" href=\"https://creativecommons.org/licenses/by-sa/4.0/legalcode.en\">Creative Commons Attribution-ShareAlike License 4.0</a>; additional terms may apply."
+
+    lists:
+      - title: "About Symboltics"
+        links:
+          - name: "Vision"
+            link: "https://symboltics.com"
+
+          - name: "Mission"
+            link: "https://symboltics.com"
+
+          - name: "Where we go"
+            link: "https://symboltics.com"
+
+          - name: "Where we come"
+            link: "https://symboltics.com"
+
+      - title: "Infrastructure"
+        links:
+          - name: "LangVM"
+            link: "https://github.com/langvm"
+
+          - name: "Symonarch"
+            link: "https://github.com/symonarch"
+
+          - name: "HyperArchy"
+            link: "https://github.com/hyperarchy"
+
+          - name: "Web Pagine"
+            link: "https://github.com/webpagine"
+
+      - title: "Services"
+        links:
+          - name: "Modularis"
+            link: "https://github.com/symboltics/modularis"
+
+    media:
+      - icon: "github"
+        link: "https://github.com/jellyterra"
+
+      - icon: "x"
+        link: "https://x.com/jellyterra"
+
+      - icon: "discord"
+        link: "https://discord.gg/SBbp7M4nus"
+
+      - icon: "element"
+        link: "https://matrix.to/#/#webpagine:matrix.org"
+
+      - icon: "telegram"
+        link: "https://t.me/webpagine"

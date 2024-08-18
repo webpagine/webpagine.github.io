@@ -1,3 +1,9 @@
 [submodule "templates/genesis"]
 	path = templates/genesis
 	url = https://github.com/webpagine/genesis
+[submodule "templates/darkmode"]
+	path = templates/darkmode
+	url = https://github.com/webpagine/darkmode
+[submodule "templates/documentor"]
+	path = templates/documentor
+	url = https://github.com/webpagine/documentor

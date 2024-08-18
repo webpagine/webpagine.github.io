@@ -1,0 +1,4 @@
+unit:
+  - template: "documentor"
+    template_key: "locale"
+    output: "/index.html"

@@ -1,0 +1,13 @@
+documentor:
+  lang: "zh"
+
+  header:
+    title: '<span style="margin: 0 20px; font-size: 24px"><span style="font-weight: bolder">Pagine</span> Docs</span>'
+
+    logo:
+      src: "/assets/img/pagine_icon_fit.svg"
+      height: 50
+
+    nav:
+      - title: "Repositories"
+        link: "https://github.com/webpagine"

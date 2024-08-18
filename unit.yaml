@@ -1,0 +1,12 @@
+unit:
+  - template: "genesis"
+    template_key: "page"
+    output: "/404.html"
+    define:
+      title : "Pagine - Web Generator"
+      content: "404.html"
+  - template: "genesis"
+    template_key: "locale"
+    output: "/index.html"
+    define:
+      title: "Pagine - Web Generator"

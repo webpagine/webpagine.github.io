@@ -1,0 +1,7 @@
+unit:
+  - template: "documentor"
+    template_key: "doc"
+    output: "/index.html"
+    define:
+      title: "文档"
+      content: "/README.md"

@@ -1,4 +1,0 @@
-[[unit]]
-template = "genesis:doc"
-output = "/index.html"
-define = { title = "文档", post = "/README.md" }

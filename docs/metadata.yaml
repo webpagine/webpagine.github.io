@@ -1,0 +1,32 @@
+documentor:
+  root: "/docs"
+
+  lang: "en"
+  theme: "dark"
+
+  versions:
+    - "v2.1"
+
+  locales:
+    - locale: "en"
+      title: "English"
+
+    - locale: "zh"
+      title: "中文"
+
+  header:
+    title: '<span style="margin: 0 20px; font-size: 24px"><span style="font-weight: bolder">Pagine</span> Docs</span>'
+
+    logo:
+      src: "/assets/img/pagine_icon_fit.svg"
+      height: 50
+
+    nav:
+      - title: "Repositories"
+        link: "https://github.com/webpagine"
+
+  footer:
+    copyright:
+      owner: "Symboltics"
+      date: "2024"
+      license: "Text is available under the <a target=\"_blank\" href=\"https://creativecommons.org/licenses/by-sa/4.0/legalcode.en\">Creative Commons Attribution-ShareAlike License 4.0</a>; additional terms may apply."
