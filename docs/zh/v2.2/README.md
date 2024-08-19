@@ -1,9 +1,9 @@
-# Pagine v2.2-alpha
+# Pagine v2.2.0-alpha-50a1f7a-20240819
 
 Pagine 是一个充分利用多核设施条件的高性能网站内容构建器，
 页面构建任务可以在很短时间内完成。
 
-## Features
+## 特性
 
 - 并行层次化处理和单元任务执行，从头到尾都如此
 - 层次化元数据传播使元数据管理简化
@@ -131,7 +131,7 @@ $ git submodule add https://github.com/webpagine/genesis templates/genesis
 
 每一“层”拥有元数据和一组将要执行的单元任务。
 
-对于目录，元数据被以表的形式储存在 `metadata.toml`，单元任务则被储存在 `unit.toml`。
+对于目录，元数据被以表的形式储存在 `metadata.yaml`，单元任务则被储存在 `unit.yaml`。
 
 每一个模板都有其在“环境”中定义的别名作为命名空间。
 
@@ -153,7 +153,7 @@ genesis:
 
 ### 单元
 
-样例: `/unit.toml`
+样例: `/unit.yaml`
 ```yaml
 unit:
   - template: "genesis"      # Which template to use.

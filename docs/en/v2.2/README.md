@@ -1,4 +1,4 @@
-# Pagine v2.2-alpha
+# Pagine v2.2.0-alpha-50a1f7a-20240819
 
 Pagine is an high-performance website constructor that makes full use of multicore hardware.
 
