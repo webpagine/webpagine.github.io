@@ -3,4 +3,4 @@ unit:
     template_key: "redirect"
     output: "index.html"
     define:
-      target: "v2.1"
+      target: "v2.2"

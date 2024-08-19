@@ -26,7 +26,7 @@ Pagine 是一个充分利用多核设施条件的高性能网站内容构建器�
 ### 从源码构建
 
 ```shell
-$ go install github.com/webpagine/pagine/v2/cmd/pagine@latest
+$ go install github.com/webpagine/pagine/v2/cmd/pagine@v2.1.3
 ```
 
 > [!TIP]
@@ -97,7 +97,7 @@ export = "post.html" # Export `post.html`
 <html lang="{{ .lang }}">
 <head>
   <title>{{ .title }}</title>
-  <link rel="stylesheet" href="{{ engine.Attr.templateBase }}/css/base.css" />
+  <link rel="stylesheet" href="{{ (getAttr).templateBase }}/css/base.css" />
 </head>
 <body>
 {{ template "header.html" .header }}

@@ -99,7 +99,7 @@ Example:  `page.html`
 <html lang="{{ .lang }}">
 <head>
   <title>{{ .title }}</title>
-  <link rel="stylesheet" href="{{ engine.Attr.templateBase }}/css/base.css" />
+  <link rel="stylesheet" href="{{ (getAttr).templateBase }}/css/base.css" />
 </head>
 <body>
 {{ template "header.html" .header }}
