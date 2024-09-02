@@ -6,6 +6,7 @@ documentor:
 
   versions:
     - "v2.1"
+    - "v2.4"
 
   locales:
     - locale: "en"

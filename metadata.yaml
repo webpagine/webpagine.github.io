@@ -10,8 +10,7 @@ genesis:
     - locale: "zh-CN"
       title: "简体中文"
 
-  head:
-    icon: "https://avatars.githubusercontent.com/u/168826426"
+  icon: "https://avatars.githubusercontent.com/u/168826426"
 
   header:
     logo:
@@ -84,3 +83,6 @@ genesis:
 
       - icon: "telegram"
         link: "https://t.me/webpagine"
+
+documentor:
+  icon: "https://avatars.githubusercontent.com/u/168826426"

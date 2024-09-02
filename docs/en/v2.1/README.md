@@ -1,4 +1,4 @@
-# Pagine v2
+# Pagine
 
 Pagine is an high-performance website constructor that makes full use of multicore hardware.
 
