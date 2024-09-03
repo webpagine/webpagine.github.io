@@ -17,54 +17,67 @@
 </div>
 
 {{ define "flip" }}
-{{ if . }} class="filled" style="text-align: left" {{ else }} style="text-align: right" {{ end }}
+class="{{ if . }}filled left{{ else }}right{{ end }}"
 {{ end }}
 
 {{ $flip := false }}
 
 {{ $flip = not $flip }}
 <section {{ template "flip" $flip }}>
+<div class="content-1">
 <h1>全速推进</h1>
 <p>
 最大化利用多核设施条件，并行地执行单元工作。<br/>
 灵活而不失性能，做好本职工作。
 </p>
+</div>
 </section>
 
 {{ $flip = not $flip }}
 <section {{ template "flip" $flip }}>
+<div class="content-1">
 <h1>创意无限</h1>
 样式表、SVG、交互脚本... 做你自己的模板，通过 Git 分发并复用模板和素材。<br/>
 选择一个许可证然后发布之，现在就可以！
+</div>
 </section>
 
 {{ $flip = not $flip }}
 <section {{ template "flip" $flip }}>
+<div class="content-1">
 <h1>国际化，联合起来!</h1>写下并翻译你的知识与经历，与世界分享。<br/>
 为你认为有价值的文章提交翻译，打破知识的边界！
+</div>
 </section>
 
 {{ $flip = not $flip }}
 <section {{ template "flip" $flip }}>
+<div class="content-1">
 <h1>安心部署，无人值守。</h1>
 很好地与 CI/CD 服务集成。你永远不需要担心写完之后要做什么。<br/>
 若在服务器模式下运行，还能在页面改动后实时查看效果。<br/>
 当你认为一切就绪时，开始借助 CI/CD 部署。<br/>
 对于 GitHub Pages，只需要一个工作流！
+</div>
 </section>
 
 {{ $flip = not $flip }}
 <section {{ template "flip" $flip }}>
+<div class="content-1">
 <h1>现你所想，见你所建。</h1>
 文档、博客、维基、百科全书 ... 找到适合你的模板，然后开始！<br/>
 内容、外观、元数据分离，保持目录干净整洁。
+</div>
 </section>
 
-<section style="text-align: center">
+<div style="text-align: center">
+<div style="height: 10vh"></div>
 <h1>踏雪留痕，寻梅采香</h1>
+<div style="height: 5vh"></div>
 <a class="button button-filled" target="_blank" href="https://github.com/webpagine/get-started">现在开始</a>
-<div style="height: 15vh"></div>
+<div style="height: 10vh"></div>
 <a target="_blank" href="https://github.com/webpagine/pagine/stargazers"><img alt="GitHub Repo stars" height="30" src="https://img.shields.io/github/stars/webpagine/pagine"></a>
-</section>
+<div style="height: 20vh"></div>
+</div>
 
 <div style="height: 10vh"></div>
