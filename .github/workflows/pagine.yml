@@ -26,7 +26,7 @@ jobs:
         run: sudo apt install node-typescript -y
 
       - name: Install Pagine
-        run: go install github.com/webpagine/pagine/v2/cmd/pagine@v2.4.0
+        run: go install github.com/webpagine/pagine/v2/cmd/pagine@v2.4.1
 
       - name: Checkout
         uses: actions/checkout@v4

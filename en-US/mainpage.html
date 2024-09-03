@@ -17,56 +17,65 @@
 </div>
 
 {{ define "flip" }}
-{{ if . }} class="filled" style="text-align: left" {{ else }} style="text-align: right" {{ end }}
+class="{{ if . }}filled left{{ else }}right{{ end }}"
 {{ end }}
 
 {{ $flip := false }}
 
 {{ $flip = not $flip }}
 <section {{ template "flip" $flip }}>
+<div class="content-1">
 <h1>Everything, speed up!</h1>
 <p>
 Make max of performance. Execute units and generate related pages in parallel.<br/>
 Flexibility without compromising efficiency. Do its job well.
 </p>
+</div>
 </section>
 
 {{ $flip = not $flip }}
 <section {{ template "flip" $flip }}>
+<div class="content-1">
 <h1>Creativity, inspired.</h1>
 Stylesheets, SVGs, interaction scripts... Make your own template,<br/>
 distribute and reuse template files via Git, with assets attached.<br/>
 Choose a license and publish your template, just in minutes!
+</div>
 </section>
 
 {{ $flip = not $flip }}
 <section {{ template "flip" $flip }}>
+<div class="content-1">
 <h1>Internationalization, united!</h1>
 Write and translate your knowledge and experiences, share with the people around the world.<br/>
 Commit translation for articles you think is valuable, break the boundary of knowledge!
+</div>
 </section>
 
 {{ $flip = not $flip }}
 <section {{ template "flip" $flip }}>
+<div class="content-1">
 <h1>Deployment, unattended.</h1>
 Well integrated with CD/CD services. You have never to worry about what to do after you wrote.<br/>
 Automatically update the page in server mode, see changes in real time.<br/>
 When you think everything is ready, deploy via CI/CD directly!<br/>
 For GitHub Pages, just an Actions workflow!
+</div>
 </section>
 
 {{ $flip = not $flip }}
 <section {{ template "flip" $flip }}>
+<div class="content-1">
 <h1>Build what you want.</h1>
 Documentation, blog, wiki, encyclopedia ... Find your template, and start with it.<br/>
 Content, appearance and metadata are separated, which keeps the directories clear.
+</div>
 </section>
 
-<section style="text-align: center">
-<h1>Leave footprints on your journey.</h1>
-<div style="min-height: 5%"></div>
-<a class="button button-filled" target="_blank" href="https://github.com/webpagine/get-started">GET STARTED WITH PAGINE</a>
-<div style="min-height: 10%"></div>
-</section>
-
+<div style="text-align: center">
 <div style="height: 10vh"></div>
+<h1>Leave footprints on your journey.</h1>
+<div style="height: 5vh"></div>
+<a class="button button-filled" target="_blank" href="https://github.com/webpagine/get-started">GET STARTED WITH PAGINE</a>
+<div style="height: 30vh"></div>
+</div>
